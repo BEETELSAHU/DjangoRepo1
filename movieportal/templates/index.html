@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("{% static 'images/mainbg.jpg' %}");
+        color: snow;
+      }
+      hr{
+        border: none;
+        border-top: 2px solid #000; /* Set the color of the border */
+        margin: 20px 0;
+        width: 50%;
+        margin: auto;
+      }
+      h3{
+        font-style: italic;
+        font-weight: 300;
+      }
+      .content{
+        border: 5px groove black;
+        border-radius: 20px;
+        padding: 2rem ;
+        text-align: center;
+      }
+      .content:hover{
+        background-color: rgba(255, 252, 155, 0.3);
+      }
+      button{
+        background-color: aqua;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+        <h1>Welcome to XYZ Movies Portal....</h1>
+        <h3>In Search of Incredible, People land here..!</h3>
+        <hr /><br><br>
+        <a href="/add"><button>ADD Movie</button></a>
+        <a href="/list"><button>List Movies</button></a>
+    </div>
+    
+  </body>
+</html>

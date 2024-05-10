@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("{% static 'images/b2.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .content{
+            border-width: 5px; /* Set the border width */
+            border-style: solid;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+            transition: border-color 0.5s ease;
+            background-color: rgba(241, 201, 139, 0.584);
+            padding: 10px;
+            text-align: center;
+            margin: 170px auto;
+            width:40%;
+        }
+        .content:hover{
+            border-color: transparent;
+        }
+        button{
+            background-color: rgb(0, 255, 30);
+            border-radius: 3px;
+            padding: 7px;
+            width: 30%;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Please add your Movie.... One by One</h1>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %} 
+            <button type="submit">Add</button>
+            <!-- <a href="http://127.0.0.1:8000/"><button>Go to Home!</button></a> -->
+        </form>
+    </div>
+</body>
+</html>

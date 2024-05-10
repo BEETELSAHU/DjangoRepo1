@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: rgb(252, 21, 21);
+        }
+        table{
+            border: 5px solid rgb(255, 255, 0);
+        }
+        th,td{
+            border: 1px solid snow;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% if movie_list %}
+    <table>
+        <thead>
+            <th>Sl no.</th>
+            <th>Release Date</th>
+            <th>Movie Name</th>
+            <th>Hero Name(Starring)</th>
+            <th>Heroien Name</th>
+            <th>Rating</th>
+        </thead>
+        {% for m in movie_list %}
+        <tr>
+            <td>{{m.id}}</td>
+            <td>{{m.release_date}}</td>
+            <td>{{m.movie_name}}</td>
+            <td>{{m.hero_name}}</td>
+            <td>{{m.heroien_name}}</td>
+            <td>{{m.movie_rating}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3>Recently no movies released...!</h3>
+    {% endif %}
+    <!-- <a href="http://127.0.0.1:8000/"><button>Go to Home!</button></a> -->
+</body>
+</html>
